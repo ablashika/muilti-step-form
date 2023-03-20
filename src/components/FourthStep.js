@@ -1,27 +1,27 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import  '../styles.css';
 
-export default function SecondStep({setActive}) {
+
+
+function FourthStep({setActive,isActive}) {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/step-three');
-        setActive('/step-three')
+        navigate('/step-five');
+       
       };
   return (
-    
-        
         <div className='stepCard'>
             <h1>SecondStep</h1>
-            <button onClick={()=>{handleClick()
-            
-        }}
+            <button 
+            onClick={()=>{handleClick()
+                setActive(!isActive)}}
             >
                 Next
             </button>
         </div>
 
-    
-   
+
   )
 }
+
+export default FourthStep
