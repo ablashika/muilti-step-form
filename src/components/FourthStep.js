@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function FourthStep({setActive,isActive}) {
+function FourthStep() {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate('/step-five');
@@ -13,8 +13,7 @@ function FourthStep({setActive,isActive}) {
         <div className='stepCard'>
             <h1>SecondStep</h1>
             <button 
-            onClick={()=>{handleClick()
-                setActive(!isActive)}}
+            onClick={handleClick}
             >
                 Next
             </button>

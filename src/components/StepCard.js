@@ -1,17 +1,6 @@
 import React from 'react'
 
 export default function StepCard(props) {
-    
-
-
-
-
-
-
-
-
-
-  
   return (
     
 

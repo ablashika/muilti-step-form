@@ -91,7 +91,7 @@ button{
   align-items: center;
 }
 .step-cirle-active{
-  background-color: brown;
+  background-color:hsl(206, 94%, 87%);
   height: 35px;
   width: 35px;
   border: 1px solid  hsl(0, 0%, 100%);

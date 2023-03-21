@@ -2,7 +2,7 @@
 import '../src/styles.css';
 import StepCard from './components/StepCard';
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Routers from './components/Router';
 
 
@@ -12,6 +12,10 @@ function App() {
  
   const location = useLocation();
   const [isActive, setActive] = useState(location.pathname)
+  useEffect(() => {
+    setActive(location.pathname);
+  }, [location.pathname]);
+
 
   console.log(isActive)
   
@@ -48,10 +52,6 @@ function App() {
         
         
         <Routers isActive={isActive} setActive={setActive}/>
-      
-      
-
-
     </div>
 
 

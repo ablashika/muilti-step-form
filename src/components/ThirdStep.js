@@ -7,7 +7,6 @@ export default function ThirdStep({setActive}) {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate('/step-four');
-        setActive('/step-four')
       };
   return (
     

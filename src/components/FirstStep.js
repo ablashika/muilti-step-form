@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import  '../styles.css'
 
@@ -7,13 +7,17 @@ import  '../styles.css'
 export default function FirstStep({setActive}) {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/step-two'); 
-        setActive('/step-two')
+        navigate('/step-two');
+        // setActive('/step-two')
+       
+    
       };
-
-      console.log(setActive,'K')
+    
+    
+      
+     
   return (
-    <div className='stepCard'>
+    <div className='stepCard'  >
             <h1>Personal info</h1>
             <p className='gray-text'>Please provide your name, email, and phone number.</p>
             <form>
