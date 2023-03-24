@@ -20,6 +20,7 @@ export default function FirstStep({setActive}) {
     <div className='stepCard'  >
             <h1>Personal info</h1>
             <p className='gray-text'>Please provide your name, email, and phone number.</p>
+            <div className='top-box'>
             <form>
                 <p className='form-label'>Name</p>
                 <input type="text" className='form-input'></input>
@@ -28,6 +29,9 @@ export default function FirstStep({setActive}) {
                 <p className='form-label'> Phone Number</p>
                 <input type="number" className='form-input'></input>
             </form>
+
+            
+            </div>
 
             <div className='nextStep-box'>
             <button onClick={handleClick}

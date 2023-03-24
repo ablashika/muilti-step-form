@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <div className="StepConatiainer">
-        <div className='step'>
+        <div className='step radius'>
         <StepCard
         stepName="STEP 1"
         stepInfo="YOUR INFO"
