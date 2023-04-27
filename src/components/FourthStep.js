@@ -11,13 +11,17 @@ function FourthStep() {
       };
   return (
         <div className='stepCard'>
-        <h1 >finishing Up</h1>
+            <div className='topStep'>
+            <h1 >finishing Up</h1>
         <h4 className='gray-text'>You have the option of monthly or yearly billing.</h4> 
         
         <div className='top-box'>
        
         
         </div>  
+
+            </div>
+       
         <div className='nextStep-box'>
         <button onClick={handleClick}
         >

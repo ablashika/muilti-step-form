@@ -20,7 +20,8 @@ export default function SecondStep() {
     
         
         <div className='stepCard'>
-        <h1 >Select Your Plan</h1>
+              <div className='topStep'>
+              <h1 >Select Your Plan</h1>
         <h4 className='gray-text'>You have the option of monthly or yearly billing.</h4> 
         
         <div className='top-box'>
@@ -35,7 +36,7 @@ export default function SecondStep() {
            <p className={isOn ? 'gray-text' : ''}>Monthly</p>
         <div className="toggle-switch" onClick={handleToggle}>  
               <div className={isOn ? 'toggle-button-on' : 'toggle-button-off'}>
-              </div>
+              </div> 
 
             </div>
              <p className={isOn ? '' : 'gray-text'}>Yearly</p>
@@ -43,6 +44,8 @@ export default function SecondStep() {
 
         </div> 
         </div>  
+              </div>
+        
         <div className='nextStep-box'>
         <button onClick={handleClick}
         >

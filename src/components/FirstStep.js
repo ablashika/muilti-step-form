@@ -18,6 +18,7 @@ export default function FirstStep({setActive}) {
      
   return (
     <div className='stepCard'  >
+            <div className='topStep'>
             <h1>Personal info</h1>
             <p className='gray-text'>Please provide your name, email, and phone number.</p>
             <div className='top-box'>
@@ -31,6 +32,7 @@ export default function FirstStep({setActive}) {
             </form>
 
             
+            </div>
             </div>
 
             <div className='nextStep-box'>

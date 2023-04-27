@@ -60,78 +60,198 @@ button {
 
 
 /* step card component*/
-.StepConatiainer{
-    display: grid;
-    background-color: hsl(0, 0%, 100%);
-    grid-template-columns: 30% 40%;
-    width: 65%;
-    grid-template-rows: 72vh ;
-    border-radius: 20px;
-    column-gap: 15%;
-    
-    
-}
 
-.step {
- background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='274' height='568' fill='none' viewBox='0 0 274 568'%3E%3Crect width='274' height='568' fill='%23483EFF' rx='10'/%3E%3Cmask id='a' width='274' height='568' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Crect width='274' height='568' fill='%23fff' rx='10'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cpath fill='%236259FF' fill-rule='evenodd' d='M-34.692 543.101C3.247 632.538 168.767 685.017 211.96 612.52c43.194-72.497-66.099-85.653-104.735-160.569-38.635-74.916-68.657-121.674-124.482-104.607-55.824 17.068-55.375 106.32-17.436 195.757Z' clip-rule='evenodd'/%3E%3Cpath fill='%23F9818E' fill-rule='evenodd' d='M233.095 601.153c60.679-28.278 92.839-143.526 41.875-171.528-50.965-28.003-57.397 47.579-108.059 75.987-50.662 28.408-82.14 50.207-69.044 88.241 13.096 38.034 74.549 35.578 135.228 7.3Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='bevel' stroke-width='5' d='m165.305 469.097 10.607-10.806M209.461 474.581l-12.506-10.503M187.56 488.991l-6.908 14.798'/%3E%3Cpath fill='%23FFAF7E' d='M.305 546.891c37.003 0 67-29.997 67-67s-29.997-67-67-67-67 29.997-67 67 29.997 67 67 67Z'/%3E%3C/g%3E%3C/svg%3E");
- margin: 15px 0px 15px 15px;
- background-repeat: no-repeat;
- background-position: center;
- background-size: cover;
- 
-}
-.stepCard{
-    margin: 15px 0px 15px 0px;
+
+/* Styles for mobile devices with a width of up to 375px
+media only screen and (max-width: 375px)
+*/
+@media only screen and (min-width: 375px) and (max-width: 1439px) {
+  /* Insert your CSS code for mobile devices here */
+  .StepConatiainer{
+    display: flex;
+    width: 50%;
+    border-radius: 0px;
+    height: 100vh;
+    flex-direction: column;  
+    
+  }
+  .App{
+  background-color: black;
+  }
+  .step{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='274' height='568' fill='none' viewBox='0 0 274 568'%3E%3Crect width='274' height='568' fill='%23483EFF' rx='0'/%3E%3Cmask id='a' width='274' height='568' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Crect width='274' height='568' fill='%23fff' rx='10'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cpath fill='%236259FF' fill-rule='evenodd' d='M-34.692 543.101C3.247 632.538 168.767 685.017 211.96 612.52c43.194-72.497-66.099-85.653-104.735-160.569-38.635-74.916-68.657-121.674-124.482-104.607-55.824 17.068-55.375 106.32-17.436 195.757Z' clip-rule='evenodd'/%3E%3Cpath fill='%23F9818E' fill-rule='evenodd' d='M233.095 601.153c60.679-28.278 92.839-143.526 41.875-171.528-50.965-28.003-57.397 47.579-108.059 75.987-50.662 28.408-82.14 50.207-69.044 88.241 13.096 38.034 74.549 35.578 135.228 7.3Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='bevel' stroke-width='5' d='m165.305 469.097 10.607-10.806M209.461 474.581l-12.506-10.503M187.56 488.991l-6.908 14.798'/%3E%3Cpath fill='%23FFAF7E' d='M.305 546.891c37.003 0 67-29.997 67-67s-29.997-67-67-67-67 29.997-67 67 29.997 67 67 67Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position:bottom  ;
+    background-size: cover;
+    height: 30vh;
     width: 100%;
-  
-}
+    border-radius: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stepCard{
+    background-color:hsl(217, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin: 5%; */
+    border-radius: 0px;
+    height: 70vh;
+    /* margin-top: -100px; */
+  }
+
+
+
 .step-circle-box{
-  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 20px;
   font-size: 13px;
-
-}
-.step-cirle {
-  height: 35px;
-  width: 35px;
+  /* background-color: blueviolet; */
+  
+  }
+  .step-cirle {
+  height: 50px;
+  width: 50px;
   border: 1px solid  hsl(0, 0%, 100%);
   color: hsl(0, 0%, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.step-cirle-active{
+  border-radius: 25px;
+  }
+  .step-cirle-active{
   background-color:hsl(206, 94%, 87%);
-  height: 35px;
-  width: 35px;
+  height: 50px;
+  width: 50px;
   border: 1px solid  hsl(0, 0%, 100%);
+  border-radius: 25px;
   color: hsl(0, 0%, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   color:hsl(213, 96%, 18%) ;
+  }
+  .step-text-box{
+    display: none;
+  }
+  .topStep{
+    width: 80%;
+    background-color:hsl(0, 0%, 100%);
+    height: 80vh;
+    margin-top: -20%;
+    margin-bottom: 20%;
+    border-radius: 10%;
+  }
+  .nextStep-box{
+    background-color: hsl(0, 0%, 100%);
+    width: 100%;
+    height:20vh;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+
+
+/* .step {
+ 
+  
+  } */
+  
+
+  /* .step-circle-box{
+    background-color: aquamarine;
+  } */
+}
+
+/* Styles for desktop devices with a width of at least 1440px */
+@media only screen and (min-width: 1440px) {
+  /* Insert your CSS code for desktop devices here */
+
+
+
+/* step card component*/
+.StepConatiainer{
+  display: grid;
+  background-color: hsl(0, 0%, 100%);
+  grid-template-columns: 30% 40%;
+  width: 65%;
+  grid-template-rows: 72vh ;
+  border-radius: 20px;
+  column-gap: 15%;
+  
+  
+}
+
+.step {
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='274' height='568' fill='none' viewBox='0 0 274 568'%3E%3Crect width='274' height='568' fill='%23483EFF' rx='10'/%3E%3Cmask id='a' width='274' height='568' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Crect width='274' height='568' fill='%23fff' rx='10'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cpath fill='%236259FF' fill-rule='evenodd' d='M-34.692 543.101C3.247 632.538 168.767 685.017 211.96 612.52c43.194-72.497-66.099-85.653-104.735-160.569-38.635-74.916-68.657-121.674-124.482-104.607-55.824 17.068-55.375 106.32-17.436 195.757Z' clip-rule='evenodd'/%3E%3Cpath fill='%23F9818E' fill-rule='evenodd' d='M233.095 601.153c60.679-28.278 92.839-143.526 41.875-171.528-50.965-28.003-57.397 47.579-108.059 75.987-50.662 28.408-82.14 50.207-69.044 88.241 13.096 38.034 74.549 35.578 135.228 7.3Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='bevel' stroke-width='5' d='m165.305 469.097 10.607-10.806M209.461 474.581l-12.506-10.503M187.56 488.991l-6.908 14.798'/%3E%3Cpath fill='%23FFAF7E' d='M.305 546.891c37.003 0 67-29.997 67-67s-29.997-67-67-67-67 29.997-67 67 29.997 67 67 67Z'/%3E%3C/g%3E%3C/svg%3E");
+margin: 15px 0px 15px 15px;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
+}
+.stepCard{
+  margin: 15px 0px 15px 0px;
+  width: 100%;
+
+}
+.step-circle-box{
+width: 70%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+margin: 20px;
+font-size: 13px;
+
+}
+.step-cirle {
+height: 35px;
+width: 35px;
+border: 1px solid  hsl(0, 0%, 100%);
+color: hsl(0, 0%, 100%);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.step-cirle-active{
+background-color:hsl(206, 94%, 87%);
+height: 35px;
+width: 35px;
+border: 1px solid  hsl(0, 0%, 100%);
+color: hsl(0, 0%, 100%);
+display: flex;
+justify-content: center;
+align-items: center;
+color:hsl(213, 96%, 18%) ;
 }
 .step-text-box{
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  height: 50px;
+display: flex;
+flex-direction: column;
+width: 70%;
+height: 50px;
 }
 
 /* white-box component */
 .nextStep-box{
-  height: 25%;
-  display:flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
+height: 25%;
+display:flex;
+flex-direction: row;
+align-items: flex-end;
+justify-content: space-between;
 
 
-  
+
+}
+.topStep{
+  /* background-color: black; */
+  height: 50vh;
 }
 .top-box{
 height: 50%;
@@ -139,29 +259,29 @@ display: flex;
 flex-direction: column;
 }
 
- 
+
 /*firstStep component*/
 .form-input{
-    width: 100%;
-    height:40px;
-    border-radius: 5px;
-    border: 1px solid hsl(229, 24%, 87%);
+  width: 100%;
+  height:40px;
+  border-radius: 5px;
+  border: 1px solid hsl(229, 24%, 87%);
 }
 
 
 /*SecondStep*/
 .plan-container{
-  display: flex;
-  justify-content: center;
-  height: 40vh;
-  width: 100%;
- justify-content: space-between; 
+display: flex;
+justify-content: center;
+height: 40vh;
+width: 100%;
+justify-content: space-between; 
 }
 .plan-card{
-  height:150px;
-  width: 120px;
-  border:1px solid hsl(213, 96%, 18%);
-  border-radius: 20px;
+height:150px;
+width: 120px;
+border:1px solid hsl(213, 96%, 18%);
+border-radius: 20px;
 }
 .subscription-time {
 display: flex;
@@ -176,112 +296,69 @@ margin-bottom: 30px;
 
 }
 .toggle-container{
-  height: 40px;
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
-  align-items: center;
+height: 40px;
+display: flex;
+width: 50%;
+justify-content: space-between;
+align-items: center;
 }
 
 /* toogle */
 .toggle-switch {
-  display: flex;
-  align-items: center;
-  width: 50px;
-  height:20px;
-  border-radius: 17px;
-  overflow: hidden;
-  cursor: pointer;
-  background-color: hsl(213, 96%, 18%);
-  padding: 5px;
- 
+display: flex;
+align-items: center;
+width: 50px;
+height:20px;
+border-radius: 17px;
+overflow: hidden;
+cursor: pointer;
+background-color: hsl(213, 96%, 18%);
+padding: 5px;
+
 }
 
 
 
 .toggle-button-on{
-  background-color: white;
-  height: 17px;
-  width: 17px;
-  border-radius: 10px;
-  transform: translateX(200%);
-  transition: transform 0.2s;
+background-color: white;
+height: 17px;
+width: 17px;
+border-radius: 10px;
+transform: translateX(200%);
+transition: transform 0.2s;
 }
 
 .toggle-button-off{
-  background-color: white;
-  height: 17px;
-  width: 17px;
-  border-radius: 10px;
-  transition: transform 0.2s;
+background-color: white;
+height: 17px;
+width: 17px;
+border-radius: 10px;
+transition: transform 0.2s;
 }
 
 
 /* third-step */
 .adds-on-box{
-  width: 100%;
-  height: 70px;
-  border:1px solid hsl(229, 24%, 87%);
-  display: flex;
-  flex-direction: row;
-  border-radius: 5px;
-  font-size: small;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 10px;
-  margin-top: 10px;
+width: 100%;
+height: 70px;
+border:1px solid hsl(229, 24%, 87%);
+display: flex;
+flex-direction: row;
+border-radius: 5px;
+font-size: small;
+align-items: center;
+justify-content: space-around;
+margin-top: 10px;
+margin-top: 10px;
 
 }
 
-.adds-on-box-active{
-  width: 100%;
-  height: 70px;
-  border:1px solid hsl(243, 100%, 62%);
-  display: flex;
-  flex-direction: row;
-  border-radius: 5px;
-  font-size: small;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 10px;
-  margin-top: 10px;
-  background-color: hsl(231, 100%, 99%);
-}
-.adds-on-items{
-  display: flex;
-  font-size: small;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  width: 60%;
-  height: 100%;
-  margin: 10px;
-}
 
 
- .adds-on-items p {
-  margin-top: 1px;
+
+
 
 }
-.adds-on-items h3 {
-  margin-bottom: 5px;
-}
-input[type="checkbox" i]{
-
-  height: 17px;
-  width: 17px;
-  accent-color: hsl(243, 100%, 62%);
-  outline: none;
-    border:1px solid  gray;
-
-}
-.check-box:focus{
-  outline: none;
-    border:1px solid  gray;
-}
-
-
-
 
 
 

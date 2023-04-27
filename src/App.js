@@ -49,6 +49,14 @@ function App() {
         />
         
         </div>
+
+        {/* <div className='nextStep-box'>
+            <button onClick={handleClick}
+            >
+                Next
+            </button>
+            </div> */}
+        
         
         
         <Routers isActive={isActive} setActive={setActive}/>

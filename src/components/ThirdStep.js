@@ -4,10 +4,16 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function ThirdStep() {
-    const navigate = useNavigate();
-    const handleClick = () => {
+
+
+const navigate = useNavigate();
+  const handleClick = () => {
         navigate('/step-four');
-      };
+   };
+
+  const handleClickBack = () => {
+        navigate('/step-two');
+  };
 
 
 const [isActiveOnline, setIsActiveOnline] = useState(false);
@@ -29,7 +35,8 @@ const [isActive, setIsActive] = useState(false);
     
      
     <div className='stepCard'>
-    <h1 >Pick add-ons</h1>
+      <div className='topStep'>
+      <h1 >Pick add-ons</h1>
     <h4 className='gray-text'>Add-ons help enhance your gaming experience.</h4> 
     
     <div className='top-box'>
@@ -64,10 +71,15 @@ const [isActive, setIsActive] = useState(false);
       
       
     </div>  
+      </div>
+    
 
     
     <div className='nextStep-box'>
-      <div className='gray-text'><p>Go Back</p></div>
+      <div 
+      onClick={handleClickBack}
+      
+      className='gray-text'><p>Go Back</p></div>
     <button onClick={handleClick}
     >
         Next
