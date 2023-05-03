@@ -24,7 +24,7 @@ export default function SecondStep() {
               <h1 >Select Your Plan</h1>
         <h4 className='gray-text'>You have the option of monthly or yearly billing.</h4> 
         
-        <div className='top-box'>
+        <div className='top-box secondstep-topbox'>
         <div className='plan-container'> 
             <div className='plan-card'></div>
             <div  className='plan-card'></div>

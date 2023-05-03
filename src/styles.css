@@ -66,7 +66,14 @@ button {
 media only screen and (max-width: 375px)
 */
 @media only screen and (min-width: 375px) and (max-width: 1439px) {
+  body{
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    color: hsl(213, 96%, 18%);
+}
+
   /* Insert your CSS code for mobile devices here */
+  
   .StepConatiainer{
     display: flex;
     width: 50%;
@@ -74,9 +81,11 @@ media only screen and (max-width: 375px)
     height: 100vh;
     flex-direction: column;  
     
+    
   }
   .App{
   background-color: black;
+  height: 100vh;
   }
   .step{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='274' height='568' fill='none' viewBox='0 0 274 568'%3E%3Crect width='274' height='568' fill='%23483EFF' rx='0'/%3E%3Cmask id='a' width='274' height='568' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Crect width='274' height='568' fill='%23fff' rx='10'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cpath fill='%236259FF' fill-rule='evenodd' d='M-34.692 543.101C3.247 632.538 168.767 685.017 211.96 612.52c43.194-72.497-66.099-85.653-104.735-160.569-38.635-74.916-68.657-121.674-124.482-104.607-55.824 17.068-55.375 106.32-17.436 195.757Z' clip-rule='evenodd'/%3E%3Cpath fill='%23F9818E' fill-rule='evenodd' d='M233.095 601.153c60.679-28.278 92.839-143.526 41.875-171.528-50.965-28.003-57.397 47.579-108.059 75.987-50.662 28.408-82.14 50.207-69.044 88.241 13.096 38.034 74.549 35.578 135.228 7.3Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='bevel' stroke-width='5' d='m165.305 469.097 10.607-10.806M209.461 474.581l-12.506-10.503M187.56 488.991l-6.908 14.798'/%3E%3Cpath fill='%23FFAF7E' d='M.305 546.891c37.003 0 67-29.997 67-67s-29.997-67-67-67-67 29.997-67 67 29.997 67 67 67Z'/%3E%3C/g%3E%3C/svg%3E");
@@ -140,34 +149,156 @@ media only screen and (max-width: 375px)
   .step-text-box{
     display: none;
   }
+
   .topStep{
-    width: 80%;
+    width: 75%;
     background-color:hsl(0, 0%, 100%);
-    height: 80vh;
-    margin-top: -20%;
+    height: 50vh;
+    margin-top: -10%;
     margin-bottom: 20%;
-    border-radius: 10%;
+    border-radius: 5%;
+    padding: 20px;
+   
+
+  }
+  .top-box{
+    /* height: 20%; */
+    display: flex;
+    flex-direction: column;
+    }
+   
+  .form-input{
+ 
+    height:40px;
+    width: 100%;
+   border-radius: 10px;
+   border: 1px solid  hsl(229, 24%, 87%);
+    
   }
   .nextStep-box{
     background-color: hsl(0, 0%, 100%);
     width: 100%;
-    height:20vh;
+    height:50vh;
     display: flex;
     justify-content: flex-end;
     align-self: flex-end;
   }
 
+  .plan-container{
+    display: flex;
+    justify-content: center;
+    height: 30vh; 
+     width: 100%;
+     justify-content: space-between; 
+    }
+    .plan-card{
+    height:140px;
+    width: 100px;
+    border:1px solid hsl(213, 96%, 18%);
+    border-radius: 20px;
+    }
+    .subscription-time {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 30px;
+    
+    
+    }
 
-/* .step {
- 
-  
-  } */
-  
 
-  /* .step-circle-box{
-    background-color: aquamarine;
-  } */
+/* third-step */
+.adds-on-box{
+  width: 100%;
+  height: 70px;
+  border:1px solid hsl(229, 24%, 87%);
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  font-size: small;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+
+  }
+  .adds-on-box-active{
+    width: 100%;
+    height: 70px;
+    border:1px solid hsl(243, 100%, 62%);
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    font-size: small;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+   
+    background-color: hsl(231, 100%, 99%);
+  }
+  /* .adds-on-box-active{
+    width: 100%;
+    height: 100px;
+    border:1px solid hsl(229, 24%, 87%);
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    font-size: small;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: hsl(217, 100%, 97%);
+    
+    
+    } */
+
+.adds-on-items{
+  display: flex;
+  font-size: small;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 60%;
+  height: 100%;
+  margin: 10px;
 }
+
+
+ .adds-on-items p {
+  margin-top: 1px;
+
+}
+.adds-on-items h3 {
+  margin-bottom: 5px;
+}
+input[type="checkbox" i]{
+
+  height: 17px;
+  width: 17px;
+  accent-color: hsl(243, 100%, 62%);
+  outline: none;
+    border:1px solid  gray;
+
+}
+.check-box:focus{
+  outline: none;
+    border:1px solid  gray;
+}
+
+
+
+  
+  
+ 
+}
+
+
+
+
+
 
 /* Styles for desktop devices with a width of at least 1440px */
 @media only screen and (min-width: 1440px) {
@@ -269,76 +400,11 @@ flex-direction: column;
 }
 
 
-/*SecondStep*/
-.plan-container{
-display: flex;
-justify-content: center;
-height: 40vh;
-width: 100%;
-justify-content: space-between; 
-}
-.plan-card{
-height:150px;
-width: 120px;
-border:1px solid hsl(213, 96%, 18%);
-border-radius: 20px;
-}
-.subscription-time {
-display: flex;
-height: 40px;
-width: 100%;
-border-radius: 10px;
-justify-content: center;
-align-items: center;
-flex-direction: row;
-margin-bottom: 30px;
 
-
-}
-.toggle-container{
-height: 40px;
-display: flex;
-width: 50%;
-justify-content: space-between;
-align-items: center;
-}
-
-/* toogle */
-.toggle-switch {
-display: flex;
-align-items: center;
-width: 50px;
-height:20px;
-border-radius: 17px;
-overflow: hidden;
-cursor: pointer;
-background-color: hsl(213, 96%, 18%);
-padding: 5px;
-
-}
-
-
-
-.toggle-button-on{
-background-color: white;
-height: 17px;
-width: 17px;
-border-radius: 10px;
-transform: translateX(200%);
-transition: transform 0.2s;
-}
-
-.toggle-button-off{
-background-color: white;
-height: 17px;
-width: 17px;
-border-radius: 10px;
-transition: transform 0.2s;
-}
 
 
 /* third-step */
-.adds-on-box{
+/* .adds-on-box{
 width: 100%;
 height: 70px;
 border:1px solid hsl(229, 24%, 87%);
@@ -350,37 +416,161 @@ align-items: center;
 justify-content: space-around;
 margin-top: 10px;
 margin-top: 10px;
+}
+.adds-on-box-active{
+  width: 100%;
+  height: 70px;
+  border:1px solid hsl(229, 24%, 87%);
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  font-size: small;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-top: 10px;
+  
+  
+  } */
 
+  /*SecondStep*/
+.plan-container{
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+  width: 100%;
+  justify-content: space-between; 
+  }
+  .plan-card{
+  height:150px;
+  width: 120px;
+  border:1px solid hsl(213, 96%, 18%);
+  border-radius: 20px;
+  }
+
+
+
+/* third-step */
+.adds-on-box{
+  width: 100%;
+  height: 100px;
+  border:1px solid hsl(229, 24%, 87%);
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  font-size: small;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+
+
+
+}
+
+.adds-on-box-active{
+  width: 100%;
+  height: 70px;
+  border:1px solid hsl(243, 100%, 62%);
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  font-size: small;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-top: 10px;
+  background-color: hsl(231, 100%, 99%);
+}
+.adds-on-items{
+  display: flex;
+  font-size: small;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 60%;
+  height: 70%;
+  margin: 10px;
+}
+
+
+ .adds-on-items p {
+  margin-top: 1px;
+
+}
+.adds-on-items h3 {
+  margin-bottom: 5px;
+}
+input[type="checkbox" i]{
+
+  height: 17px;
+  width: 17px;
+  accent-color: hsl(243, 100%, 62%);
+  outline: none;
+    border:1px solid  gray;
+
+}
+.check-box:focus{
+  outline: none;
+    border:1px solid  gray;
 }
 
 
 
-
-
-
 }
 
 
+/*SecondStep*/
 
-
-
-
-
-
+  .subscription-time {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 30px;
   
   
-  /* @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
+  }
+  .toggle-container{
+  height: 40px;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
   }
   
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  } */
+  /* toogle */
+  .toggle-switch {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height:20px;
+  border-radius: 17px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: hsl(213, 96%, 18%);
+  padding: 5px;
   
+  }
+  
+  
+  
+  .toggle-button-on{
+  background-color: white;
+  height: 17px;
+  width: 17px;
+  border-radius: 10px;
+  transform: translateX(200%);
+  transition: transform 0.2s;
+  }
+  
+  .toggle-button-off{
+  background-color: white;
+  height: 17px;
+  width: 17px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  }
+

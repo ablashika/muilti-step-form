@@ -5,6 +5,7 @@ export default function StepCard(props) {
     
 
     
+
     <div className='step-circle-box'>
         <div className={props.isActive ? 'step-cirle-active radius' : 'step-cirle radius'}>{props.circle}</div>
         <div className='step-text-box'>
@@ -12,6 +13,7 @@ export default function StepCard(props) {
          <h4 className='step-text'>{props.stepInfo}</h4>
         </div>    
     </div>
+
     
   )
 }

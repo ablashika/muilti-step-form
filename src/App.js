@@ -21,6 +21,7 @@ function App() {
   
   return (
     <div className="App">
+    
       <div className="StepConatiainer">
         <div className='step radius'>
         <StepCard
@@ -61,6 +62,7 @@ function App() {
         
         <Routers isActive={isActive} setActive={setActive}/>
     </div>
+    
 
 
    
