@@ -5,51 +5,42 @@ import {useForm} from 'react-hook-form'
 
 
 
-export default function FirstStep({setActive}) {
-    const { register, handleSubmit, formState: { errors },onChange } = useForm()
-
-    // const { register, handleSubmit, errors } = useForm()
+export default function FirstStep({userData,setUserData}) {
+    const { register, handleSubmit, formState: { errors } } = useForm()
 
     const navigate = useNavigate();
-    const handleClick = (data) => {
-        // e.preventDefault()
 
-        console.log({data})
+
+    const handleClick = (data) => {
+        const newUser = { name: data.name, email: data.email, number: data.number };
+        setUserData( [...userData, newUser])
         navigate('/step-two');
-        // setActive('/step-two')
-       
+    }; 
     
-      };
-    
-    
-      
      
   return (
     <div className='stepCard'  >
         <form onSubmit={handleSubmit(handleClick)}>
         <div className='topStep'>
-            <h1>Personal info</h1>
+           <div className='top-text-box'>
+           <h1>Personal info</h1>
             <p className='gray-text'>Please provide your name, email
             <br></br>
              address, and phone number.</p>
+           </div>
             <div className='top-box'>
-           
                 <p className='form-label'>Name</p>
-                <input type="text" className='form-input' name='name' onChange={onChange} {...register("name", { required: true })}/>
+                <input type="text" className='form-input' name='name'  {...register("name", { required: true })}/>
                 {errors.name && <span>This field is required</span>}
                 <p className='form-label' >Email Address</p>
-                <input type="email" className='form-input'  name='email' onChange={onChange} {...register("email", { required: true })}/>
-                <p className='form-label'  name='number' type="email" onChange={onChange}> Phone Number</p>
-                <input type="number" className='form-input'></input>
-            
-
-            
+                <input type="email" className='form-input'  name='email' {...register("email", { required: true })}/>
+                <p className='form-label'   type="email"> Phone Number</p>
+                <input type="number" name='number'className='form-input' {...register("number", { required: true })}/>    
             </div>
         </div>
 
         <div className='nextStep-box'>
-            <button  type="submit"
-            >
+            <button  type="submit">
                 Next
             </button>
           </div>

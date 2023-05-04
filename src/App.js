@@ -12,12 +12,16 @@ function App() {
  
   const location = useLocation();
   const [isActive, setActive] = useState(location.pathname)
+  const [userData, setUserData] = useState([{name:"Mahsd",email:"jhdbd",number:438}]);
+
+
   useEffect(() => {
+    
     setActive(location.pathname);
   }, [location.pathname]);
+  console.log(userData)
 
-
-  console.log(isActive)
+  // console.log(isActive)
   
   return (
     <div className="App">
@@ -50,17 +54,7 @@ function App() {
         />
         
         </div>
-
-        {/* <div className='nextStep-box'>
-            <button onClick={handleClick}
-            >
-                Next
-            </button>
-            </div> */}
-        
-        
-        
-        <Routers isActive={isActive} setActive={setActive}/>
+        <Routers isActive={isActive} setActive={setActive} userData={userData} setUserData={setUserData}/>
     </div>
     
 
