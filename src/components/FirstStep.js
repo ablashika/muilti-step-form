@@ -12,10 +12,13 @@ export default function FirstStep({userData,setUserData}) {
 
 
     const handleClick = (data) => {
-        const newUser = { name: data.name, email: data.email, number: data.number };
+        const newUser = { name: data.name, email: data.email, number: data.number};
         setUserData( [...userData, newUser])
         navigate('/step-two');
     }; 
+
+ 
+
     
      
   return (
