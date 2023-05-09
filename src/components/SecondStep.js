@@ -46,17 +46,16 @@ const handleClick = () => {
   return (
     
         
-        <div className='stepCard'>
-              <form onSubmit={handleSubmit(handleClick)}>
-              <div className='topStep'>
-             <div className='top-text-box'>
-             <h1 >Select Your Plan</h1>
-        <h4 className='gray-text'>You have the option of monthly or yearly billing.</h4> 
-        
-             </div>
-        <div className='top-box secondstep-topbox'>
-        <div className='plan-container'> 
-        {items.map(item => (
+    <div className='stepCard'>
+      <form onSubmit={handleSubmit(handleClick)}>
+      <div className='topStep-second'>
+          <div className='top-text-box'>
+            <h1 >Select Your Plan</h1>
+            <h4 className='gray-text'>You have the option of monthly or yearly billing.</h4> 
+          </div>
+          <div className='top-box secondstep-topbox'>
+         <div className='plan-container'> 
+               {items.map(item => (
                 <React.Fragment key={item.id}>
                   <input type="checkbox" id={item.id} className='check' {...register(item.id, { required: true })} onChange={(e) => handleCheckboxChange(item, e.target.checked)} />
                   <label htmlFor={item.id} className={`plan-card ${selectedItems.some(selectedItem => selectedItem.id === item.id) ? "selectBoxActive" : ""}`}>{item.label}</label>
@@ -77,15 +76,14 @@ const handleClick = () => {
 
         </div> 
         </div>  
-              </div>
-        
-        <div className='nextStep-box'>
+      </div>
+        <div className='nextStep-box-second'>
         <button onClick={handleClick}
         >
             Next
         </button>
         </div>
-              </form>
+      </form>
     </div>
 
     
