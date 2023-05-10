@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useForm} from 'react-hook-form';
 import  '../styles.css';
@@ -15,22 +15,40 @@ export default function SecondStep({userData, setUserData}) {
   const [isOn, setIsOn] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const { register, handleSubmit,formState: { errors } } = useForm();
+  
+  const navigate = useNavigate()
 
-
- const navigate = useNavigate()
-
-
-
- const handleClick = () => { 
-  const formData = selectedItems.map(item => item.id);
+  const handleFormSubmit = () => { 
+    const formData = selectedItems.map(item => item.id);
     const updatedUserData = userData.map(user => {
-        return { ...user, itemsSelected: formData };
-      });
-  setUserData(updatedUserData);
-  console.log(userData, "js");
-  navigate('/step-three');   
- };
+      return { ...user, itemsSelected: formData };
+    });
+    setUserData(updatedUserData);
+    navigate('/step-three', { state: { userData: updatedUserData } });   
+  };
 
+//  const handleFormSubmit = () => { 
+//   console.log("hhs")
+//   console.log("Selected items:", selectedItems);
+//   const formData = selectedItems.map(item => item.id);
+//     const updatedUserData = userData.map(user => {
+//         return { ...user, itemsSelected: formData };
+//       });
+  
+//    setUserData(updatedUserData);
+//    console.log("Form data:", formData);
+//   console.log("User data:", updatedUserData);
+//   setUserData(updatedUserData);
+//   navigate("/step-three");
+//   console.log(userData, "js");
+//   navigate('/step-three');   
+//  };
+
+ useEffect(() => {
+  const formData = selectedItems.map(item => item.id);
+  const updatedUserData = userData.map(user => ({ ...user, itemsSelected: formData }));
+  setUserData(updatedUserData);
+}, [selectedItems]);
 
  
 
@@ -42,56 +60,120 @@ export default function SecondStep({userData, setUserData}) {
 
 
 
- const handleCheckboxChange = (item, isChecked) => {
-          if (isChecked) {
-            setSelectedItems([...selectedItems, item]);
-          } else {
-            setSelectedItems(selectedItems.filter(selectedItem => selectedItem.id !== item.id));
-          }
- };
+//  const handleCheckboxChange = (item, isChecked) => {
+//           if (isChecked) {
+//             setSelectedItems([...selectedItems, item]);
+//           } else {
+//             setSelectedItems(selectedItems.filter(selectedItem => selectedItem.id !== item.id));
+//           }
+//  };
+const handleCheckboxChange = (item, isChecked) => {
+  if (isChecked) {
+    setSelectedItems([...selectedItems, item]);
+  } else {
+    setSelectedItems(selectedItems.filter(selectedItem => selectedItem.id !== item.id));
+  }
+  console.log("Selected items:", selectedItems);
+};
  
 return (
-    
-        
-    <div className='stepCard'>
-      <form onSubmit={handleSubmit(handleClick)}>
-      <div className='topStep-second'>
-          <div className='top-text-box'>
-            <h1 >Select Your Plan</h1>
-            <h4 className='gray-text'>You have the option of monthly or yearly billing.</h4> 
-          </div>
-          <div className='top-box secondstep-topbox'>
-         <div className='plan-container'> 
-               {items.map(item => (
-                <React.Fragment key={item.id}>
-                  <input type="checkbox" id={item.id} className='check' {...register(item.id, { required: true })} onChange={(e) => handleCheckboxChange(item, e.target.checked)} />
-                  <label htmlFor={item.id} className={`plan-card ${selectedItems.some(selectedItem => selectedItem.id === item.id) ? "selectBoxActive" : ""}`}>{item.label}</label>
-               
-                </React.Fragment>
-              ))}
-        </div>
-        <div className='subscription-time'>
-           <div className='toggle-container'>
-           <p className={isOn ? 'gray-text' : ''}>Monthly</p>
-        <div className="toggle-switch" onClick={handleToggle}>  
-              <div className={isOn ? 'toggle-button-on' : 'toggle-button-off'}>
-              </div> 
-
-            </div>
-             <p className={isOn ? '' : 'gray-text'}>Yearly</p>
-           </div>
-
-        </div> 
-        </div>  
+  <form onSubmit={handleFormSubmit}>
+  <div className="stepCard">
+    <div className="topStep-second">
+      <div className="top-text-box">
+        <h1>Select Your Plan</h1>
+        <h4 className="gray-text">You have the option of monthly or yearly billing.</h4>
       </div>
-        <div className='nextStep-box-second'>
-        <button onClick={handleClick}
-        >
-            Next
-        </button>
+      <div className="top-box secondstep-topbox">
+        <div className="plan-container">
+          {items.map((item) => (
+            <React.Fragment key={item.id}>
+              <input
+                type="checkbox"
+                id={item.id}
+                className="check"
+                {...register(item.id, { required: true })}
+                onChange={(e) => handleCheckboxChange(item, e.target.checked)}
+              />
+              <label
+                htmlFor={item.id}
+                className={`plan-card ${
+                  selectedItems.some((selectedItem) => selectedItem.id === item.id)
+                    ? 'selectBoxActive'
+                    : ''
+                }`}
+              >
+                {item.label}
+              </label>
+            </React.Fragment>
+          ))}
         </div>
-      </form>
+        <div className="subscription-time">
+          <div className="toggle-container">
+            <p className={isOn ? 'gray-text' : ''}>Monthly</p>
+            <div className="toggle-switch" onClick={handleToggle}>
+              <div className={isOn ? 'toggle-button-on' : 'toggle-button-off'}></div>
+            </div>
+            <p className={isOn ? '' : 'gray-text'}>Yearly</p>
+          </div>
+        </div>
+      </div>
     </div>
+    <div className="nextStep-box-second">
+      <button type="submit">Next</button>
+    </div>
+  </div>
+</form>
+        
+    // <div className='stepCard'>
+    //   <form onSubmit={handleFormSubmit}>
+    //   <div className='topStep-second'>
+    //       <div className='top-text-box'>
+    //         <h1 >Select Your Plan</h1>
+    //         <h4 className='gray-text'>You have the option of monthly or yearly billing.</h4> 
+    //       </div>
+    //       <div className='top-box secondstep-topbox'>
+    //      <div className='plan-container'> 
+    //            {items.map(item => (
+    //             <React.Fragment key={item.id}>
+    //               <input type="checkbox"
+    //               name={item.id} // add a unique name to the input
+ 
+    //               id={item.id} className='check' {...register(item.id, { required: true })} onChange={(e) => handleCheckboxChange(item, e.target.checked)} />
+    //               <label htmlFor={item.id} className={`plan-card ${selectedItems.some(selectedItem => selectedItem.id === item.id) ? "selectBoxActive" : ""}`}>{item.label}</label>
+    //               {errors[item.id] && (
+    //   <p className="error">Please select {item.label}</p>
+    // )}
+    //             </React.Fragment>
+                
+                
+    //           ))}
+    //           {errors.item1 && <p>Item 1 is required</p>}
+    //       {errors.item2 && <p>Item 2 is required</p>}
+    //       {errors.item3 && <p>Item 3 is required</p>}
+    //     </div>
+    //     <div className='subscription-time'>
+    //        <div className='toggle-container'>
+    //        <p className={isOn ? 'gray-text' : ''}>Monthly</p>
+    //     <div className="toggle-switch" onClick={handleToggle}>  
+    //           <div className={isOn ? 'toggle-button-on' : 'toggle-button-off'}>
+    //           </div> 
+
+    //         </div>
+    //          <p className={isOn ? '' : 'gray-text'}>Yearly</p>
+    //        </div>
+
+    //     </div> 
+    //     </div>  
+    //   </div>
+    //     <div className='nextStep-box-second'>
+    //     <button type="submit" 
+    //     >
+    //         Next
+    //     </button>
+    //     </div>
+    //   </form>
+    // </div>
 
     
    
