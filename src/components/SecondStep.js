@@ -24,25 +24,9 @@ export default function SecondStep({userData, setUserData}) {
       return { ...user, itemsSelected: formData };
     });
     setUserData(updatedUserData);
-    navigate('/step-three', { state: { userData: updatedUserData } });   
+    navigate('/step-three'); 
+    // navigate('/step-three', { state: { userData: updatedUserData } });   
   };
-
-//  const handleFormSubmit = () => { 
-//   console.log("hhs")
-//   console.log("Selected items:", selectedItems);
-//   const formData = selectedItems.map(item => item.id);
-//     const updatedUserData = userData.map(user => {
-//         return { ...user, itemsSelected: formData };
-//       });
-  
-//    setUserData(updatedUserData);
-//    console.log("Form data:", formData);
-//   console.log("User data:", updatedUserData);
-//   setUserData(updatedUserData);
-//   navigate("/step-three");
-//   console.log(userData, "js");
-//   navigate('/step-three');   
-//  };
 
  useEffect(() => {
   const formData = selectedItems.map(item => item.id);
@@ -50,36 +34,23 @@ export default function SecondStep({userData, setUserData}) {
   setUserData(updatedUserData);
 }, [selectedItems]);
 
- 
-
-
  const handleToggle = () => {
           setIsOn(!isOn);
  };
 
-
-
-
-//  const handleCheckboxChange = (item, isChecked) => {
-//           if (isChecked) {
-//             setSelectedItems([...selectedItems, item]);
-//           } else {
-//             setSelectedItems(selectedItems.filter(selectedItem => selectedItem.id !== item.id));
-//           }
-//  };
 const handleCheckboxChange = (item, isChecked) => {
   if (isChecked) {
     setSelectedItems([...selectedItems, item]);
   } else {
     setSelectedItems(selectedItems.filter(selectedItem => selectedItem.id !== item.id));
   }
-  console.log("Selected items:", selectedItems);
 };
  
 return (
-  <form onSubmit={handleFormSubmit}>
+ 
   <div className="stepCard">
-    <div className="topStep-second">
+     <form onSubmit={handleFormSubmit}>
+    <div className="topStep topStep-second">
       <div className="top-text-box">
         <h1>Select Your Plan</h1>
         <h4 className="gray-text">You have the option of monthly or yearly billing.</h4>
@@ -122,8 +93,9 @@ return (
     <div className="nextStep-box-second">
       <button type="submit">Next</button>
     </div>
+    </form>
   </div>
-</form>
+
         
     // <div className='stepCard'>
     //   <form onSubmit={handleFormSubmit}>

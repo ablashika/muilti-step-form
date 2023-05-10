@@ -1,19 +1,17 @@
-import React from 'react'
+
+import React from 'react';
 
 export default function StepCard(props) {
   return (
-    
-
-    
-
-    <div className='step-circle-box'>
-        <div className={props.isActive ? 'step-cirle-active radius' : 'step-cirle radius'}>{props.circle}</div>
-        <div className='step-text-box'>
+    <div className='step-circle-box' onClick={() => props.handleNavigate(props.next)}>
+      <div className={props.isActive ? 'step-cirle-active radius' : 'step-cirle radius'}>
+        {props.circle}
+      </div>
+      <div className='step-text-box'>
         <p className='step-text'>{props.stepName}</p>
-         <h4 className='step-text'>{props.stepInfo}</h4>
-        </div>    
+        <h4 className='step-text'>{props.stepInfo}</h4>
+      </div>    
     </div>
-
-    
-  )
+  );
 }
+
