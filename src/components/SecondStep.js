@@ -12,38 +12,45 @@ const items = [
 
 
 export default function SecondStep({userData, setUserData}) {
-    const [isOn, setIsOn] = useState(false);
-    const [selectedItems, setSelectedItems] = useState([]);
-    const { register, handleSubmit,formState: { errors } } = useForm();
+  const [isOn, setIsOn] = useState(false);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const { register, handleSubmit,formState: { errors } } = useForm();
 
 
-    const navigate = useNavigate()
+ const navigate = useNavigate()
 
 
 
-const handleClick = () => { 
-      const formData = selectedItems.map(item => item.id);
-      const updatedUserData = userData.map(user => {
-           return { ...user, itemsSelected: formData };
+ const handleClick = () => { 
+  const formData = selectedItems.map(item => item.id);
+    const updatedUserData = userData.map(user => {
+        return { ...user, itemsSelected: formData };
       });
-      setUserData(updatedUserData);
+  setUserData(updatedUserData);
   console.log(userData, "js");
   navigate('/step-three');   
-      };
-    
-  const handleToggle = () => {
-          setIsOn(!isOn);
-        };
+ };
 
-        const handleCheckboxChange = (item, isChecked) => {
+
+ 
+
+
+ const handleToggle = () => {
+          setIsOn(!isOn);
+ };
+
+
+
+
+ const handleCheckboxChange = (item, isChecked) => {
           if (isChecked) {
             setSelectedItems([...selectedItems, item]);
           } else {
             setSelectedItems(selectedItems.filter(selectedItem => selectedItem.id !== item.id));
           }
-        };
+ };
  
-  return (
+return (
     
         
     <div className='stepCard'>
