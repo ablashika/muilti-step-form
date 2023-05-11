@@ -49,7 +49,7 @@ const handleCheckboxChange = (item, isChecked) => {
 return (
  
   <div className="stepCard">
-     <form onSubmit={handleFormSubmit}>
+     <form onSubmit={handleSubmit(handleFormSubmit)}>
     <div className="topStep topStep-second">
       <div className="top-text-box">
         <h1>Select Your Plan</h1>
@@ -61,9 +61,10 @@ return (
             <React.Fragment key={item.id}>
               <input
                 type="checkbox"
+                name='plan'
                 id={item.id}
                 className="check"
-                {...register(item.id, { required: true })}
+                {...register("plan", item.id, { required: true })}
                 onChange={(e) => handleCheckboxChange(item, e.target.checked)}
               />
               <label

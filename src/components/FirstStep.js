@@ -1,21 +1,31 @@
-import React  from 'react'
+import React,{useState}  from 'react'
 import { useNavigate } from 'react-router-dom';
 import  '../styles.css'
 import {useForm} from 'react-hook-form'
 
 
 
-export default function FirstStep({userData,setUserData}) {
-    const { register, handleSubmit, formState: { errors } } = useForm()
+export default function FirstStep({userData,setUserData,setFormComplete,formComplete}) {
 
-    const navigate = useNavigate();
+    const { register, handleSubmit, formState: { errors } } = useForm()
+   const navigate = useNavigate();
 
 
     const handleClick = (data) => {
-        const newUser = { name: data.name, email: data.email, number: data.number};
-        setUserData( [...userData, newUser])
-        navigate('/step-two');
+      const newUser = { name: data.name, email: data.email, number: data.number };
+      setUserData([...userData, newUser]);
+      navigate('/step-two');
     }; 
+  
+    const handleInputChange = (event,index) => {
+      const { name, value } = event.target;
+      if (formComplete && formComplete.fields) {
+        const fields = [...formComplete.fields];
+        fields[index] = { ...fields[index], value };
+        setFormComplete({ ...formComplete, fields });
+      }
+    };
+
 
  
 
@@ -33,12 +43,12 @@ export default function FirstStep({userData,setUserData}) {
            </div>
             <div className='top-box'>
                 <p className='form-label'>Name</p>
-                <input type="text" className='form-input' name='name'  {...register("name", { required: true })}/>
+                <input type="text" className='form-input' name='name'  {...register("name", { required: true })} onChange={handleInputChange}/>
                 {errors.name && <span>This field is required</span>}
                 <p className='form-label' >Email Address</p>
-                <input type="email" className='form-input'  name='email' {...register("email", { required: true })}/>
+                <input type="email" className='form-input'  name='email' {...register("email", { required: true })} onChange={handleInputChange}/>
                 <p className='form-label'   type="email"> Phone Number</p>
-                <input type="number" name='number'className='form-input' {...register("number", { required: true })}/>    
+                <input type="number" name='number'className='form-input' {...register("number", { required: true })} onChange={handleInputChange}/>    
             </div>
         </div>
 

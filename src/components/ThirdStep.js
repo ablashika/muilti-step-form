@@ -45,7 +45,7 @@ export default function ThirdStep({ userData, setUserData }) {
           <div className='top-box'>
             {addOnSelection.map(addOn => (
               <div key={addOn.id} className={addOn.isActive ? 'adds-on-box-active' : 'adds-on-box'}>
-                <input className='check-box' type="checkbox" checked={addOn.isActive} onChange={() => handleToggle(addOn.id)} />
+                <input className='check-box' type="checkbox" checked={addOn.isActive} onChange={() => handleToggle(addOn.id)} name="payment"/>
                 <div className='adds-on-items'>
                   <h3>{addOn.label}</h3>
                   <p className='gret-text'>{addOn.description}</p>

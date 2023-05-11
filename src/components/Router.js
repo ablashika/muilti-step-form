@@ -6,23 +6,29 @@ import FourthStep from './FourthStep'
 import FifthStep from './FifthStep'
 import {Routes, Route} from "react-router-dom";
 
-export default function Routers({setActive,isActive, userData,setUserData}) {
+export default function Routers({setActive,isActive, userData,setUserData ,formComplete,setFormComplete}) {
 
   return (
     <Routes>
     <Route exact={true} path="/" element={<FirstStep setActive={setActive} isActive={isActive} 
-    userData={userData} setUserData={setUserData} />} />
+    userData={userData} setUserData={setUserData}
+    setFormComplete={setFormComplete} formComplete={formComplete}
+    />} />
     <Route exact={true} path="/step-two" element={<SecondStep setActive={setActive} isActive={isActive}
      userData={userData} setUserData={setUserData}
+     setFormComplete={setFormComplete} formComplete={formComplete}
     />} />
     <Route exact={true} path="/step-three" element={<ThirdStep setActive={setActive} isActive={isActive}
+    setFormComplete={setFormComplete} formComplete={formComplete}
      userData={userData} setUserData={setUserData}
     /> } />
     <Route exact={true} path="/step-four" element={<FourthStep setActive={setActive} isActive={isActive}
      userData={userData} setUserData={setUserData}
+     setFormComplete={setFormComplete} formComplete={formComplete}
     />} />
     <Route exact={true} path="/step-five" element={<FifthStep  setActive={setActive} isActive={isActive}
      userData={userData} setUserData={setUserData}
+     setFormComplete={setFormComplete} formComplete={formComplete}
     />} />
 
   </Routes>

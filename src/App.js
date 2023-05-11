@@ -10,12 +10,32 @@ function App() {
   const location = useLocation();
   const [isActive, setActive] = useState(location.pathname)
   const [userData, setUserData] = useState([{name:"Mahsd",email:"jhdbd",number:438}]);
+  const [formComplete, setFormComplete] = useState({ isCompleted: false, fields: [] })
+  // const [formComplete, setFormComplete] = useState({ isComplete: false });
+  // const [formComplete, setFormComplete] = useState(
+  //   {
+  //           title: "Step 1",
+  //           description: "Fill out this form",
+  //           completed: false,
+  //           fields: [
+  //             { name: "name", label: "Name", value: "" },
+  //             { name: "email", label: "Email", value: "" },
+  //             { name: "password", label: "Password", value: "" },
+  //           ],
+  //         },
+         
+  // );
+  const [isComplete, setIsComplete] = useState(false);
+
  
 
   useEffect(() => {
     
     setActive(location.pathname);
   }, [location.pathname]);
+  useEffect(() => {
+    setIsComplete(Object.values(formComplete).every(field => field));
+  }, [formComplete]);
   
   const navigate = useNavigate()
   
@@ -58,7 +78,9 @@ function App() {
   ];
   
   
-  
+  const isStepComplete = () => {
+    return Object.values(formComplete).every(field => field);
+  } 
   
   
   
@@ -76,6 +98,9 @@ function App() {
         isActive={isActive === '/'} 
         next='/'
         handleNavigate={handleNavigate}
+        setFormComplete={setFormComplete}
+        formComplete={formComplete}
+        isComplete={isComplete}
         />
         <StepCard
         stepName="STEP 2"
@@ -84,6 +109,9 @@ function App() {
         isActive= {isActive === '/step-two'}
         next={ '/step-two'}
         handleNavigate={handleNavigate}
+        setFormComplete={setFormComplete}
+        formComplete={formComplete}
+        isComplete={isComplete}
         />
         <StepCard
         stepName="STEP 3"
@@ -92,6 +120,7 @@ function App() {
         isActive= {isActive === '/step-three'}
         next={ '/step-three'}
         handleNavigate={handleNavigate}
+        setFormComplete={setFormComplete} formComplete={formComplete}
         />
         <StepCard
         stepName="STEP 4"
@@ -100,6 +129,7 @@ function App() {
         isActive={isActive === '/step-four'}
         next={ '/step-four'}
         handleNavigate={handleNavigate}
+        setFormComplete={setFormComplete} formComplete={formComplete}
         />
         
         </div>
@@ -113,4 +143,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
