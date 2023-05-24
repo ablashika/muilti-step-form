@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -9,7 +8,7 @@ const addOns = [
   { id: 'otherService', label: 'Other Service', description: 'Access to other services', price: 1 }
 ];
 
-export default function ThirdStep({ userData, setUserData }) {
+export default function ThirdStep({ userData, setUserData}) {
   const [addOnSelection, setAddOnSelection] = useState(addOns.map(addOn => ({ ...addOn, isActive: false })));
 
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -17,8 +16,10 @@ export default function ThirdStep({ userData, setUserData }) {
 
   const handleClick = () => {
     const formData = addOnSelection.filter(addOn => addOn.isActive).map(addOn => addOn.id);
-    const updatedUserData = userData.map(user => ({ ...user, addsOnSelected: formData }));
-    setUserData(updatedUserData);
+    const currentUser = userData[userData.length - 1];
+    const updatedUserData = { ...currentUser, addsOnSelected: formData };
+    const updatedUsers = [...userData.slice(0, userData.length - 1), updatedUserData];
+    setUserData(updatedUsers);
     navigate('/step-four');
   };
 

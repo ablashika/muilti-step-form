@@ -9,7 +9,6 @@ export default function StepCard(props) {
       </div>
       <div className='step-text-box'>
       <p className='step-text'>
-      {props.isComplete ? "Completed" : "Incomplete"}
         </p>
         <p className='step-text'>{props.stepName}</p>
         <h4 className='step-text'>{props.stepInfo}</h4>

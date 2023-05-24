@@ -18,33 +18,34 @@ export default function SecondStep({userData, setUserData}) {
   
   const navigate = useNavigate()
 
-  const handleFormSubmit = () => { 
+  const handleFormSubmit = () => {
     const formData = selectedItems.map(item => item.id);
-    const updatedUserData = userData.map(user => {
-      return { ...user, itemsSelected: formData };
-    });
+    const currentUserIndex = userData.length - 1;
+    const updatedUserData = [...userData];
+    updatedUserData[currentUserIndex] = { ...updatedUserData[currentUserIndex], itemsSelected: formData };
     setUserData(updatedUserData);
-    navigate('/step-three'); 
-    // navigate('/step-three', { state: { userData: updatedUserData } });   
+    navigate('/step-three');
   };
 
- useEffect(() => {
-  const formData = selectedItems.map(item => item.id);
-  const updatedUserData = userData.map(user => ({ ...user, itemsSelected: formData }));
-  setUserData(updatedUserData);
-}, [selectedItems]);
+  useEffect(() => {
+    const formData = selectedItems.map(item => item.id);
+    const currentUserIndex = userData.length - 1;
+    const updatedUserData = [...userData];
+    updatedUserData[currentUserIndex] = { ...updatedUserData[currentUserIndex], itemsSelected: formData };
+    setUserData(updatedUserData);
+  }, [selectedItems]);
 
- const handleToggle = () => {
-          setIsOn(!isOn);
- };
+  const handleToggle = () => {
+    setIsOn(!isOn);
+  };
 
-const handleCheckboxChange = (item, isChecked) => {
-  if (isChecked) {
-    setSelectedItems([...selectedItems, item]);
-  } else {
-    setSelectedItems(selectedItems.filter(selectedItem => selectedItem.id !== item.id));
-  }
-};
+  const handleCheckboxChange = (item, isChecked) => {
+    if (isChecked) {
+      setSelectedItems([...selectedItems, item]);
+    } else {
+      setSelectedItems(selectedItems.filter(selectedItem => selectedItem.id !== item.id));
+    }
+  };
  
 return (
  
