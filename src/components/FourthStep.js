@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function FourthStep({
   userData,
   setUserData,
-  currentIndex
+
 }) {
   const navigate = useNavigate();
 
