@@ -2,18 +2,31 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles.css';
 import { useForm } from 'react-hook-form';
+import { setUsersData } from '../slice/UserSlice';
+import { useDispatch,useSelector } from 'react-redux';
 
-export default function FirstStep({ userData, setUserData }) {
+
+export default function FirstStep({ }) {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
-
+  const dispatch = useDispatch()
+  const userData = useSelector((state) => state.user.users)
+  console.log(userData,"j")
  
 
+  // const handleClick = (data) => {
+  //   const newUser = { name: data.name, email: data.email, number: data.number };
+  //   dispatch(setUsersData(newUser))
+  //   // setUserData( [...userData, newUser])
+  //   navigate('/step-two');
+  // };
+  
   const handleClick = (data) => {
-    const newUser = { name: data.name, email: data.email, number: data.number };
-    setUserData( [...userData, newUser])
+    const updatedUserData = { ...userData, name: data.name, email: data.email, number: data.number };
+    dispatch(setUsersData(updatedUserData));
     navigate('/step-two');
   };
+
 
   // Handle input changes
   

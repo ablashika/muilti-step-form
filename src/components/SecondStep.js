@@ -2,6 +2,8 @@ import React,{useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useForm} from 'react-hook-form';
 import  '../styles.css';
+import { updateUser} from '../slice/UserSlice';
+import { useDispatch,useSelector } from 'react-redux';
 
 
 const items = [
@@ -11,29 +13,44 @@ const items = [
 ];
 
 
-export default function SecondStep({userData, setUserData}) {
+export default function SecondStep() {
   const [isOn, setIsOn] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const { register, handleSubmit,formState: { errors } } = useForm();
   
+  
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const userData = useSelector((state) => state.user.users)
+  console.log(userData,"j")
+  const currentUserIndex = userData.length - 1;
 
+  // const handleFormSubmit = () => {
+  //   const updatedUserData = { ...userData, itemsSelected: selectedItems.map(item => item.id) };
+  //   dispatch(setUsersData(updatedUserData));
+  //   navigate('/step-three');
+  // };
+  // const handleFormSubmit = () => {
+  //   const formData = selectedItems.map((item) => item.id);
+  //   const currentUserIndex = userData.length - 1;
+  //   const updatedUserData = [...userData];
+  //   updatedUserData[currentUserIndex] = { ...updatedUserData[currentUserIndex], itemsSelected: formData };
+  //   dispatch(setUsersData(updatedUserData));
+  //   navigate('/step-three');
+  // };
   const handleFormSubmit = () => {
-    const formData = selectedItems.map(item => item.id);
-    const currentUserIndex = userData.length - 1;
-    const updatedUserData = [...userData];
-    updatedUserData[currentUserIndex] = { ...updatedUserData[currentUserIndex], itemsSelected: formData };
-    setUserData(updatedUserData);
+    const formData = selectedItems.map((item) => item.id);
+    const updatedUserData = { itemsSelected: formData };
+    dispatch(updateUser({ userId: userData[currentUserIndex].id, updatedData: updatedUserData }));
     navigate('/step-three');
   };
-
-  useEffect(() => {
-    const formData = selectedItems.map(item => item.id);
-    const currentUserIndex = userData.length - 1;
-    const updatedUserData = [...userData];
-    updatedUserData[currentUserIndex] = { ...updatedUserData[currentUserIndex], itemsSelected: formData };
-    setUserData(updatedUserData);
-  }, [selectedItems]);
+  // useEffect(() => {
+  //   const formData = selectedItems.map(item => item.id);
+  //   const currentUserIndex = userData.length - 1;
+  //   const updatedUserData = [...userData];
+  //   updatedUserData[currentUserIndex] = { ...updatedUserData[currentUserIndex], itemsSelected: formData };
+  //   updateUser(updatedUserData);
+  // }, [selectedItems]);
 
   const handleToggle = () => {
     setIsOn(!isOn);

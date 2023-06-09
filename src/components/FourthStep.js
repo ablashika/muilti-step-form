@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 function FourthStep({
-  userData,
   setUserData,
 
 }) {
   const navigate = useNavigate();
+  const userData = useSelector((state) => state.user.users)
+  console.log(userData,"j")
 
   useEffect(() => {
     console.log(userData, 'udu');

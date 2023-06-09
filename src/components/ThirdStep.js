@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { updateUser } from '../slice/UserSlice';
+import { useDispatch,useSelector } from 'react-redux';
+
 
 const addOns = [
   { id: 'onlineService', label: 'Online Service', description: 'Access to multiple player games', price: 1 },
@@ -8,20 +11,25 @@ const addOns = [
   { id: 'otherService', label: 'Other Service', description: 'Access to other services', price: 1 }
 ];
 
-export default function ThirdStep({ userData, setUserData}) {
+export default function ThirdStep({}) {
   const [addOnSelection, setAddOnSelection] = useState(addOns.map(addOn => ({ ...addOn, isActive: false })));
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const userData = useSelector((state) => state.user.users)
+  console.log(userData,"j")
 
   const handleClick = () => {
     const formData = addOnSelection.filter(addOn => addOn.isActive).map(addOn => addOn.id);
-    const currentUser = userData[userData.length - 1];
-    const updatedUserData = { ...currentUser, addsOnSelected: formData };
-    const updatedUsers = [...userData.slice(0, userData.length - 1), updatedUserData];
-    setUserData(updatedUsers);
+    const updatedUserData = {
+      userId: userData[userData.length - 1].id,
+      updatedData: { addsOnSelected: formData }
+    };
+    dispatch(updateUser(updatedUserData));
     navigate('/step-four');
   };
+
 
   const handleClickBack = () => {
     navigate('/step-two');

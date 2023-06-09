@@ -3,12 +3,22 @@ import StepCard from './components/StepCard';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Routers from './components/Router';
+import { useStore,useSelector } from 'react-redux';
+
 
 
 function App() {
+  const store = useStore();
   const location = useLocation();
   const [isActive, setActive] = useState(location.pathname);
   const [userData, setUserData] = useState([]);
+
+  const users = useSelector((state) => state.user.users)
+  console.log(users,"jjkbb")
+
+
+  
+  
 
   useEffect(() => {
     setActive(location.pathname);
@@ -69,6 +79,7 @@ function App() {
           setActive={setActive}
           userData={userData}
           setUserData={setUserData}
+          store={store}
         
         />
       </div>
