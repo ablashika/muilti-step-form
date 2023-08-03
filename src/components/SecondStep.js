@@ -7,9 +7,9 @@ import { useDispatch,useSelector } from 'react-redux';
 
 
 const items = [
-  { id: 'item1', label: 'Item 1' },
-  { id: 'item2', label: 'Item 2' },
-  { id: 'item3', label: 'Item 3' }
+  { id: 'item1', label: '12' },
+  { id: 'item2', label: '60' },
+  { id: 'item3', label: '3' }
 ];
 
 
@@ -75,7 +75,11 @@ return (
                     : ''
                 }`}
               >
-                {item.label}
+               {isOn?
+                <p>{item.label}/yearly</p>:
+        
+               <p>{item.label}/monthly</p>
+               }
               </label>
             </React.Fragment>
           ))}

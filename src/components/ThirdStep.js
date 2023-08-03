@@ -21,7 +21,7 @@ export default function ThirdStep({}) {
   console.log(userData,"j")
 
   const handleClick = () => {
-    const formData = addOnSelection.filter(addOn => addOn.isActive).map(addOn => addOn.id);
+    const formData = addOnSelection.filter(addOn => addOn.isActive).map(addOn => addOn);
     const updatedUserData = {
       userId: userData[userData.length - 1].id,
       updatedData: { addsOnSelected: formData }

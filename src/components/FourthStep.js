@@ -23,6 +23,7 @@ function FourthStep({
     );
   }
 
+  
   // Check if there is a current user or not
   const currentUser = userData[userData.length - 1];
   if (!currentUser) {
@@ -32,6 +33,8 @@ function FourthStep({
       </div>
     );
   }
+  console.log(currentUser,"current")
+
 const handleClick = () => {
     const updatedUserData = { ...currentUser, isCompleted: true};
     const updatedUsers = [...userData.slice(0, userData.length - 1), updatedUserData];
@@ -45,10 +48,26 @@ const handleClick = () => {
       <div className="topStep">
         <h1>Finishing Up</h1>
         <h4 className="gray-text">You have the option of monthly or yearly billing.</h4>
-
+     <h4 className='gray-text'>Add-ons help enhance your gaming experience.</h4> 
+          <div className='top-box'>
+            
+              <div className= 'adds-on-box'>
+                {/* <input className='check-box' type="checkbox" checked={addOn.isActive} onChange={() => handleToggle(addOn.id)} name="payment"/>*/}
+                <div className='adds-on-items'> 
+                  {/* <h3>{addOn.label}</h3> */}
+                  {/* <p className='gret-text'>{addOn.description}</p> */}
+                </div>
+                {currentUser.addsOnSelected.map(user => (<>
+                  <p className='purple-text'>+${user.label}</p>
+<p className='purple-text'>+${user.price}</p>
+</>))}
+              </div>
+      
+          </div>
+          {/* 
         <div className="top-box">
           <p>{currentUser.name}</p>
-        </div>
+        </div> */}
       </div>
 
       <div className="nextStep-box">
