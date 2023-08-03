@@ -6,13 +6,10 @@ function FourthStep({
   setUserData,
 
 }) {
+
   const navigate = useNavigate();
   const userData = useSelector((state) => state.user.users)
-  console.log(userData,"j")
-
-  useEffect(() => {
-    console.log(userData, 'udu');
-  }, [userData]);
+  console.log(userData,"user")
 
   // Check if the userData array is empty or not
   if (userData.length === 0) {
@@ -33,7 +30,6 @@ function FourthStep({
       </div>
     );
   }
-  console.log(currentUser,"current")
 
 const handleClick = () => {
     const updatedUserData = { ...currentUser, isCompleted: true};
@@ -50,24 +46,20 @@ const handleClick = () => {
         <h4 className="gray-text">You have the option of monthly or yearly billing.</h4>
      <h4 className='gray-text'>Add-ons help enhance your gaming experience.</h4> 
           <div className='top-box'>
-            
-              <div className= 'adds-on-box'>
-                {/* <input className='check-box' type="checkbox" checked={addOn.isActive} onChange={() => handleToggle(addOn.id)} name="payment"/>*/}
-                <div className='adds-on-items'> 
-                  {/* <h3>{addOn.label}</h3> */}
-                  {/* <p className='gret-text'>{addOn.description}</p> */}
-                </div>
-                {currentUser.addsOnSelected.map(user => (<>
-                  <p className='purple-text'>+${user.label}</p>
-<p className='purple-text'>+${user.price}</p>
-</>))}
-              </div>
+               {currentUser.addsOnSelected.map(user => (
+                 <div className= 'adds-on-box'>
+        
+              <p className='purple-text'>+${user.price}</p>
+              <p className='purple-text'>{user.label}</p>
+              <p className='purple-text'>{user.description}</p>
+           
+             </div>
+
+))} 
+              
       
           </div>
-          {/* 
-        <div className="top-box">
-          <p>{currentUser.name}</p>
-        </div> */}
+         
       </div>
 
       <div className="nextStep-box">

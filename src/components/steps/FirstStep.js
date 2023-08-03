@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles.css';
+import '../../styles.css';
 import { useForm } from 'react-hook-form';
-import { setUsersData } from '../slice/UserSlice';
+import { setUsersData } from '../../slice/UserSlice';
 import { useDispatch,useSelector } from 'react-redux';
 
 
@@ -19,13 +19,8 @@ export default function FirstStep({ }) {
   const handleClick = (data) => {
     const updatedUserData = { ...userData, name: data.name, email: data.email, number: data.number };
     dispatch(setUsersData(updatedUserData));
-    // dispatch(addOrUpdateUserData(updatedUserData));
     navigate('/step-two');
   };
-
-
-  // Handle input changes
-  
 
   return (
     <div className='stepCard'>

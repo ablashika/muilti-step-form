@@ -35,17 +35,7 @@ body{
   
  }
 
- /* *{
-  margin: 0px;
-  padding: 0px;
- } */
 
-
-
-/*Typography*/
-/* p{
-  margin: 10px;
-} */
 
 .gray-text{
   color: hsl(231, 11%, 63%);
@@ -58,9 +48,6 @@ body{
 .purple-text{
   color:  hsl(243, 100%, 62%);
 }
-/* p{
-  margin: 10px;
-} */
 
 
 /*buttons*/
@@ -132,18 +119,15 @@ media only screen and (max-width: 375px)
     /* margin-top: -100px; */
   }
 
-
-
 .step-circle-box{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 20px;
-  font-size: 13px;
-  /* background-color: blueviolet; */
-  
+  font-size: 13px; 
   }
+
   .step-cirle {
   height: 50px;
   width: 50px;
@@ -154,6 +138,7 @@ media only screen and (max-width: 375px)
   align-items: center;
   border-radius: 25px;
   }
+
   .step-cirle-active{
   background-color:hsl(206, 94%, 87%);
   height: 50px;
@@ -181,15 +166,11 @@ media only screen and (max-width: 375px)
    
 
   }
-  .top-text-box{
-    /* background-color: blue; */
-    /* height: 30%; */
-  }
+  
   .top-box{
-    /* height: 70%; */
+   
     display: flex;
     flex-direction: column;
-    /* background-color: rgb(187, 49, 14); */
     }
    
   .form-input{
@@ -295,22 +276,7 @@ media only screen and (max-width: 375px)
    
     background-color: hsl(231, 100%, 99%);
   }
-  /* .adds-on-box-active{
-    width: 100%;
-    height: 100px;
-    border:1px solid hsl(229, 24%, 87%);
-    display: flex;
-    flex-direction: row;
-    border-radius: 5px;
-    font-size: small;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 20px;
-    background-color: hsl(217, 100%, 97%);
-    
-    
-    } */
-
+  
 .adds-on-items{
   display: flex;
   font-size: small;
@@ -358,10 +324,6 @@ input[type="checkbox" i]{
 
 /* Styles for desktop devices with a width of at least 1440px */
 @media only screen and (min-width: 1440px) {
-  /* Insert your CSS code for desktop devices here */
-
-
-
 /* step card component*/
 .StepConatiainer{
   display: grid;
@@ -431,15 +393,8 @@ height: 50px;
   height: 80%;
   width: 100%;
 }
-/* .top-box{
-display: flex;
-flex-direction: column;
-
-
-} */
 
 .top-text-box{
-  /* background-color: blue; */
   height: 25%;
   margin: 0%;
 }
@@ -447,7 +402,6 @@ flex-direction: column;
   height: 75%;
   display: flex;
   flex-direction: column;
-  /* background-color: rgb(187, 49, 14); */
   margin: 0%;
   }
 
@@ -475,39 +429,6 @@ margin: 0px;
 }
 
 
-
-
-
-/* third-step */
-/* .adds-on-box{
-width: 100%;
-height: 70px;
-border:1px solid hsl(229, 24%, 87%);
-display: flex;
-flex-direction: row;
-border-radius: 5px;
-font-size: small;
-align-items: center;
-justify-content: space-around;
-margin-top: 10px;
-margin-top: 10px;
-}
-.adds-on-box-active{
-  width: 100%;
-  height: 70px;
-  border:1px solid hsl(229, 24%, 87%);
-  display: flex;
-  flex-direction: row;
-  border-radius: 5px;
-  font-size: small;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 10px;
-  margin-top: 10px;
-  
-  
-  } */
-
   /*SecondStep*/
 .plan-container{
   display: flex;
@@ -522,6 +443,63 @@ margin-top: 10px;
   border:1px solid hsl(213, 96%, 18%);
   border-radius: 20px;
   }
+  .subscription-time {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 30px;
+    
+    
+    }
+    .toggle-container{
+    height: 40px;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+
+  
+  
+  /* toogle */
+  .toggle-switch {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height:20px;
+    border-radius: 17px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: hsl(213, 96%, 18%);
+    padding: 5px;
+    
+    }
+    
+    
+    
+    .toggle-button-on{
+    background-color: white;
+    height: 17px;
+    width: 17px;
+    border-radius: 10px;
+    transform: translateX(200%);
+    transition: transform 0.2s;
+    }
+    
+    .toggle-button-off{
+    background-color: white;
+    height: 17px;
+    width: 17px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    }
+  
+  
 
 
 
@@ -594,58 +572,18 @@ input[type="checkbox" i]{
 }
 
 
-/*SecondStep*/
-
-  .subscription-time {
-  display: flex;
-  height: 40px;
+/*fourthStep*/
+.finishingCard{
   width: 100%;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
+  height: 100px;
+  border:1px solid hsl(229, 24%, 87%);
+  display: flex;
   flex-direction: row;
-  margin-bottom: 30px;
-  
-  
-  }
-  .toggle-container{
-  height: 40px;
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
+  border-radius: 5px;
+  font-size: small;
   align-items: center;
-  }
-  
-  /* toogle */
-  .toggle-switch {
-  display: flex;
-  align-items: center;
-  width: 50px;
-  height:20px;
-  border-radius: 17px;
-  overflow: hidden;
-  cursor: pointer;
-  background-color: hsl(213, 96%, 18%);
-  padding: 5px;
-  
-  }
-  
-  
-  
-  .toggle-button-on{
-  background-color: white;
-  height: 17px;
-  width: 17px;
-  border-radius: 10px;
-  transform: translateX(200%);
-  transition: transform 0.2s;
-  }
-  
-  .toggle-button-off{
-  background-color: white;
-  height: 17px;
-  width: 17px;
-  border-radius: 10px;
-  transition: transform 0.2s;
-  }
+  justify-content: space-around;
+  margin-top: 10px;
 
+
+}

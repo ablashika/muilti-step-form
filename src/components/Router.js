@@ -1,74 +1,16 @@
-// import React from 'react'
-// import FirstStep from './FirstStep'
-// import SecondStep from './SecondStep'
-// import ThirdStep from './ThirdStep'
-// import FourthStep from './FourthStep'
-// import FifthStep from './FifthStep'
-// import {Routes, Route} from "react-router-dom";
-
-// export default function Routers({setActive,isActive, userData,setUserData ,formComplete,setFormComplete,setStepOneComplete,stepOneComplete,stepTwoComplete,
-//   setStepTwoComplete,stepThreeComplete,setStepThreeComplete,stepFourComplete,setStepFourComplete
-// }) {
-
-//   return (
-//     <Routes>
-//     <Route exact={true} path="/" element={<FirstStep setActive={setActive} isActive={isActive} 
-//     userData={userData} setUserData={setUserData}
-//     setFormComplete={setFormComplete} formComplete={formComplete}
-//     setStepOneComplete={setStepOneComplete}stepOneComplete={stepOneComplete}
-
-//     />} />
-//     <Route exact={true} path="/step-two" element={<SecondStep setActive={setActive} isActive={isActive}
-//      userData={userData} setUserData={setUserData}
-//      setFormComplete={setFormComplete} formComplete={formComplete}
-//      stepTwoComplete={stepTwoComplete} setStepTwoComplete={setStepTwoComplete}
-    
-//     />} />
-//     <Route exact={true} path="/step-three" element={<ThirdStep setActive={setActive} isActive={isActive}
-//     setFormComplete={setFormComplete} formComplete={formComplete}
-//      userData={userData} setUserData={setUserData}
-//      stepThreeComplete={stepThreeComplete} setStepThreeComplete={setStepThreeComplete}
-
-//     /> } />
-//     <Route exact={true} path="/step-four" element={<FourthStep setActive={setActive} isActive={isActive}
-//      userData={userData} setUserData={setUserData}
-//      setFormComplete={setFormComplete} formComplete={formComplete}
-//      setStepFourComplete={setStepFourComplete}stepFourComplete={stepFourComplete}
-
-//     />} />
-//     <Route exact={true} path="/step-five" element={<FifthStep  setActive={setActive} isActive={isActive}
-//      userData={userData} setUserData={setUserData}
-//      setFormComplete={setFormComplete} formComplete={formComplete}
-//     />} />
-
-//   </Routes>
-//   )
-// }
-
-
 import React from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import FirstStep from './FirstStep';
-import SecondStep from './SecondStep';
-import ThirdStep from './ThirdStep';
-import FourthStep from './FourthStep';
-import FifthStep from './FifthStep';
+import FirstStep from './steps/FirstStep';
+import SecondStep from './steps/SecondStep';
+import ThirdStep from './steps/ThirdStep';
+import FourthStep from './steps/FourthStep';
+import FifthStep from './steps/FifthStep';
 
 export default function Routers({
   setActive,
   isActive,
   userData,
   setUserData,
-  formComplete,
-  setFormComplete,
-  setStepOneComplete,
-  stepOneComplete,
-  stepTwoComplete,
-  setStepTwoComplete,
-  stepThreeComplete,
-  setStepThreeComplete,
-  stepFourComplete,
-  setStepFourComplete,
 }) {
   const navigate = useNavigate();
 
@@ -85,10 +27,7 @@ export default function Routers({
             isActive={isActive}
             userData={userData}
             setUserData={setUserData}
-            setFormComplete={setFormComplete}
-            formComplete={formComplete}
-            setStepOneComplete={setStepOneComplete}
-            stepOneComplete={stepOneComplete}
+            
         
           />
         }
@@ -101,12 +40,7 @@ export default function Routers({
             setActive={setActive}
             isActive={isActive}
             userData={userData}
-            setUserData={setUserData}
-            setFormComplete={setFormComplete}
-            formComplete={formComplete}
-            stepTwoComplete={stepTwoComplete}
-            setStepTwoComplete={setStepTwoComplete}
-            
+            setUserData={setUserData}     
           />
         }
       />
@@ -117,13 +51,9 @@ export default function Routers({
           <ThirdStep
             setActive={setActive}
             isActive={isActive}
-            setFormComplete={setFormComplete}
-            formComplete={formComplete}
             userData={userData}
             setUserData={setUserData}
-            stepThreeComplete={stepThreeComplete}
-            setStepThreeComplete={setStepThreeComplete}
-         
+             
           />
         }
       />
@@ -136,11 +66,7 @@ export default function Routers({
             isActive={isActive}
             userData={userData}
             setUserData={setUserData}
-            setFormComplete={setFormComplete}
-            formComplete={formComplete}
-            setStepFourComplete={setStepFourComplete}
-            stepFourComplete={stepFourComplete}
-            
+          
           />
         }
       />
@@ -153,9 +79,8 @@ export default function Routers({
             isActive={isActive}
             userData={userData}
             setUserData={setUserData}
-            setFormComplete={setFormComplete}
-            formComplete={formComplete}
-          />
+          
+           />
         }
       />
     </Routes>
