@@ -26,11 +26,14 @@ export default function SecondStep() {
   const currentUserIndex = userData.length - 1;
 
   const handleFormSubmit = () => {
+    // const formData = selectedItems.map((item) => item.id);
+    // const updatedUserData = { itemsSelected: formData };
+    // dispatch(updateUser({ userId: userData[currentUserIndex].id, updatedData: updatedUserData }));
     const formData = selectedItems.map((item) => item.id);
     const updatedUserData = { itemsSelected: formData };
     dispatch(updateUser({ userId: userData[currentUserIndex].id, updatedData: updatedUserData }));
-    // dispatch(addOrUpdateUserData({userId: userData[currentUserIndex].id, updatedData: updatedUserData }))
-     navigate('/step-three');
+    
+        navigate('/step-three');
   };
   
 

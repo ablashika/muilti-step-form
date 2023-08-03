@@ -23,6 +23,7 @@ function FourthStep({
   
   // Check if there is a current user or not
   const currentUser = userData[userData.length - 1];
+  console.log(currentUser,"yhh")
   if (!currentUser) {
     return (
       <div>

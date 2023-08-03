@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import FirstStep from './steps/FirstStep';
 import SecondStep from './steps/SecondStep';
 import ThirdStep from './steps/ThirdStep';
@@ -12,7 +12,7 @@ export default function Routers({
   userData,
   setUserData,
 }) {
-  const navigate = useNavigate();
+  
 
   
   
