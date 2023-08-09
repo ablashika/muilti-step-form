@@ -65,8 +65,8 @@ export default function ThirdStep({}) {
           </div>
         </div>
         <div className='nextStep-box'>
-          <div onClick={handleClickBack} className='gray-text'><p>Go Back</p></div>
-          <button type="submit">Next</button>
+          <button onClick={handleClickBack} className='gray-text goback'><p>Go Back</p></button>
+          <button type="submit" className='button'>Next</button>
         </div>
       </form>
     </div>
