@@ -47,20 +47,31 @@ const handleClick = () => {
     <div className="stepCard">
       <div className="topStep">
         <h1>Finishing Up</h1>
-        <h4 className="gray-text">You have the option of monthly or yearly billing.</h4>
-     <h4 className='gray-text'>Add-ons help enhance your gaming experience.</h4> 
+        <h4 className="gray-text">Double-check everything looks OK before confirming.</h4>
+ 
           <div className='top-box'>
-               {currentUser.addsOnSelected.map(user => (
-                 <div className= 'adds-on-box'>
-        
-              <p className='purple-text'>+${user.price}</p>
+          <div className= 'finish-box'>
+               {currentUser.itemsSelected.map(user => (
+                 
+              <div className='times'>
               <p className='purple-text'>{user.label}</p>
-              <p className='purple-text'>{user.description}</p>
-           
-             </div>
+              <p className='purple-text'>{user.priceMo||user.priceYr}</p>
+              </div>
+            
 
 ))} 
-              
+             </div>  
+             <div className= 'adds-on-box'>
+               {currentUser.addsOnSelected.map(user => (
+                 
+              <>
+              <p className='purple-text'>{user.label}</p>
+              <p className='purple-text'>+${user.price}</p>
+              </>
+            
+
+))} 
+             </div> 
       
           </div>
          
