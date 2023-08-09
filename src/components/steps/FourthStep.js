@@ -39,6 +39,9 @@ const handleClick = () => {
    
       navigate('/step-five');
   };
+  const handleClickBack = () => {
+    navigate('/step-three');
+  };
 
   return (
     <div className="stepCard">
@@ -64,7 +67,8 @@ const handleClick = () => {
       </div>
 
       <div className="nextStep-box">
-        <button onClick={handleClick}>Next</button>
+        <button onClick={handleClickBack} className='gray-text goback'><p>Go Back</p></button>
+          <button onClick={handleClick}  type="submit" className='confirm'>Confirm</button>
       </div>
     </div>
   );

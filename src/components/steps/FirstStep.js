@@ -12,10 +12,6 @@ export default function FirstStep({ }) {
   const dispatch = useDispatch()
   const userData = useSelector((state) => state.user.users)
   console.log(userData,"j")
- 
-
- 
-  
   const handleClick = (data) => {
     const updatedUserData = { ...userData, name: data.name, email: data.email, number: data.number };
     dispatch(setUsersData(updatedUserData));
@@ -42,7 +38,8 @@ export default function FirstStep({ }) {
         </div>
 
         <div className='nextStep-box'>
-          <button type="submit">Next</button>
+          <button></button>
+          <button  type="submit" className='button'>Next</button>
         </div>
       </form>
     </div>
